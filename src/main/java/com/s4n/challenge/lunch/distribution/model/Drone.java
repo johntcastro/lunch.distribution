@@ -15,12 +15,6 @@ public class Drone {
 		this.orientation = orientation;
 	}
 
-	public void setPosition(int x, int y, Orientation orientation) {
-		setPositionX(x);
-		setPositionY(y);
-		setOrientation(orientation);
-	}
-
 	public String getPositionAsString() {
 		return "(" + 
 				getPositionX() + 
