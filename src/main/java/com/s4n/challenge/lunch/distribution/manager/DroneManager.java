@@ -17,6 +17,7 @@ public class DroneManager {
 				outMessage += processLunchDelivery(drone, delivery, blockRestriction);
 			} catch (CustomException e) {
 				outMessage += e.getMessage();
+				break;
 			}
 			outMessage += System.lineSeparator();
 		}
@@ -47,7 +48,7 @@ public class DroneManager {
 
 	private void validateDronePosition(Drone drone, int blockRestriction) throws CustomException {
 		if(Math.abs(drone.getPositionX()) > blockRestriction || Math.abs(drone.getPositionY()) > blockRestriction) {
-			throw new CustomException("Drone out of limits, processing next delivery");
+			throw new CustomException("Drone out of limits, returning to the restaurant");
 		}
 	}
 }
